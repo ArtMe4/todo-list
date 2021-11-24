@@ -14,7 +14,7 @@ export function TodoFilter({onFilter}) {
                 <option value="">Default</option>
                 {
                     Object.keys(STATUS).map(item => (
-                        <option value="">{STATUS[item]}</option>
+                        <option value={STATUS[item]} key={item}>{STATUS[item]}</option>
                     ))
                 }
             </select>

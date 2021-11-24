@@ -12,7 +12,7 @@ function Todo() {
     const onAddTodo = (todo) => {
 
         setTodos(prevState => [...prevState, {
-            ...todos,
+            ...todo,
             id: shortid.generate(),
         }]);
 
@@ -22,9 +22,20 @@ function Todo() {
         setFilter(filter);
     }
 
-    // const onTodoStatusChange =
+    const onTodoStatusChange = (statusChangeData) => {
+        const {id, checked} = statusChangeData;
 
-    const filteredTodos = filter !== 'Не сделано' ? todos.filter(todo => todo.checked === filter) : todos;
+        setTodos(prevState => prevState.map(todo => {
+            if(todo.id === id) {
+                todo.checked = checked ? 'Сделано' : 'Не сделано';
+
+            }
+            return todos;
+        }));
+    }
+
+    const filteredTodos = filter ? todos.filter(todo => todo.checked === filter) : todos;
+    // const filteredTodos = todos;
 
     return (
         <>

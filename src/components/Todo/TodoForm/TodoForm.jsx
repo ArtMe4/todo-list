@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {FORM_STATE} from '../Todo.constants'
 
-export function TodoForm(onAdd) {
+export function TodoForm({onAdd}) {
 
     const [form, setForm] = useState(FORM_STATE);
 
@@ -52,6 +52,7 @@ export function TodoForm(onAdd) {
                     onChange={onFieldChange}
                 />
             </div>
+            <button hidden type="submit"></button>
         </form>
     );
 
