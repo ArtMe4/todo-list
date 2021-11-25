@@ -11,7 +11,7 @@ function Todo() {
 
     const onAddTodo = (todo) => {
 
-        setTodos(prevState => [...prevState, {
+        setTodos(prev => [...prev, {
             ...todo,
             id: shortid.generate(),
         }]);
@@ -25,12 +25,11 @@ function Todo() {
     const onTodoStatusChange = (statusChangeData) => {
         const {id, checked} = statusChangeData;
 
-        setTodos(prevState => prevState.map(todo => {
+        setTodos(prev => prev.map(todo => {
             if(todo.id === id) {
                 todo.checked = checked ? 'Сделано' : 'Не сделано';
-
             }
-            return todos;
+            return todo;
         }));
     }
 
