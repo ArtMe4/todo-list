@@ -15,9 +15,9 @@ export function TodoList({todos, onTodoStatusChange}) {
     return (
         <div className="Todo-List">
             {
-                todos.map((todo, idx) => (
+                todos.map(todo => (
                     <div
-                        key={idx}
+                        key={todo.id}
                         className="Todo-Item"
                     >
                         <div>
