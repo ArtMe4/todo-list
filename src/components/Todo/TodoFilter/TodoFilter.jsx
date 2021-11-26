@@ -11,7 +11,7 @@ export function TodoFilter({onFilter}) {
                 className="Todo-Filter__select"
                 onChange={onFilterChange}
             >
-                <option value="">Default</option>
+                <option value="">Все</option>
                 {
                     Object.keys(STATUS).map(item => (
                         <option value={STATUS[item]} key={item}>{STATUS[item]}</option>
