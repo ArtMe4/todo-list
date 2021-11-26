@@ -26,12 +26,6 @@ export function TodoList({todos, onTodoStatusChange}) {
                         <div>
                             {todo.description}
                         </div>
-                        <div>
-                            {todo.id}
-                        </div>
-                        <div>
-                            {todo.checked}
-                        </div>
                         <div className="Todo-Item-Checkbox">
                             <input
                                 type="checkbox"
